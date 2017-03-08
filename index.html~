@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/logo.png">
-
-    <title>Siddhant Shekhar</title>
-
+    <meta name="description" content="Personal website">
+    <meta name="author" content="Siddhant Shekhar">
+    <link rel="icon" href="logo.png">
+    <title>Siddhant Shekhar</title>   
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <link href="cover.css" rel="stylesheet">
-
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
   </head>
-
-  <body>
-
-		<br/><br/><br/><br/><br/><br/><br/>
-          <div class="inner cover">
-            <h1 class="cover-heading">Siddhant Shekhar</h1>
-            <p class="lead">0.75*Software Engineer. IPU CSE.<br/></p>
-            <p class="links">
-            	<a href = "about.html">about</a> /
-            	<a href = "resume.html">resume</a> /
-            	<a href = "projects.html">projects</a> /
-            	<a href = "contact.html">contact</a>
+  
+  <body background = "bg.jpg">
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Siddhant Shekhar</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="projects.html">Projects</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+          <div class="inner cover">
+            <h1 class="cover-heading">Hello</h1>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
