@@ -33,11 +33,22 @@
             </div>
           </div>
           <div class="inner cover">
-            <h1 class="cover-heading">Hello</h1>
+            <h1 class="cover-heading"><p id = "demo"></p></h1>
             <p class="lead"></p>
           </div>
         </div>
       </div>
     </div>
+    
+    <script> 
+    		var d = new Date();
+    		var n = d.getHours();
+    		if(n>=12 && n<18)
+    			document.getElementById("demo").innerHTML = "Hey there, Good Afternoon";
+    		else if(n>=18)
+    			document.getElementById("demo").innerHTML = "Hey there, Good Evening";
+    		else
+    		     document.getElementById("demo").innerHTML = "Hey there, Good Morning";
+     </script>
   </body>
 </html>
