@@ -25,7 +25,6 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
                   <li><a href="projects.html">Projects</a></li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -34,7 +33,7 @@
           </div>
           <div class="inner cover">
             <h1 class="cover-heading"><p id = "demo"></p></h1>
-            <p class="lead"></p>
+            <p class="lead" style = "text-align:left";>My name is Siddhant Shekhar. I am a final year Undergraduate student at Indraprastha University (a.k.a. IPU) studying Computer Science.</br> I work on projects, take part in coding contests, enjoy reading, and watch movies. You can find me on <a href="https://www.codechef.com/users/siddhant034" style="color:#00FFFF;">Codechef</a>, <a href="https://linkedin.com/in/siddhant034" style="color:#00FFFF;">LinkedIn</a>, and <a href = "https://github.com/siddhant034" style="color:#00FFFF;">GitHub.</a></br>Take a look at my <a href="resume.html" style="color:#00FFFF;">resume</a> and feel free to <a href="contact.html" style="color:#00FFFF;">contact me.</a></p> 
           </div>
         </div>
       </div>
