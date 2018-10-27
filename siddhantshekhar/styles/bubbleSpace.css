@@ -1,0 +1,38 @@
+html, body, #canvas-container{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-image: linear-gradient(to bottom right, #40387b, #F0E68C );
+}
+
+#canvas-container{
+    overflow: hidden;
+}
+
+.name-hrefs-container{
+color: white;
+position: absolute;
+top: 40%;
+left: 7%;
+font-size: 44px;
+font-family: "Comic Sans MS", cursive, sans-serif;
+font-weight: 100;
+z-index: 1;
+}
+
+.links-container{
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.links-container div a{
+    cursor: pointer;
+    color:white;
+}
+
+.links-container div{
+    display: inline-block;    
+}
+

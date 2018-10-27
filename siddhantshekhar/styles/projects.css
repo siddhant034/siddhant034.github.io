@@ -1,0 +1,59 @@
+#wrapper{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    width:100%;
+}
+
+.project-containers{
+    border:1px solid #212121;
+    border-radius: 4px;
+    margin:2%;
+    height:320px;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.overlay-div{
+    opacity: 0;
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color:white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #212121;
+}
+
+.overlay-div:hover{
+    opacity: 0.9;
+}
+
+@media only screen and (min-width: 1024px) {
+    .project-containers{
+        flex:1 1 28%;
+    }
+} 
+
+@media only screen and (min-width: 500px) and (max-width: 1023px) {
+    .project-containers{
+        flex:1 1 45%;
+    }
+}
+
+@media only screen and (max-width: 499px ) {
+    .project-containers{
+        flex:1 1 85%;
+    }
+}
+
+#home-icon-wrapper{
+    margin:28px 0 0 28px;
+    width:115px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blueviolet;
+    font-weight: bold;
+}
