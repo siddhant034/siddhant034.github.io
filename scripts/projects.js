@@ -6,12 +6,12 @@
         {
             title: 'Personal Website',
             imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            href: 'https://siddhant034.github.io/'
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Reddit Top 10',
+            imgSrc: 'assets/redditTop10.png',
+            href: 'https://siddhant034.github.io/Projects/RedditTop10'
         },
         {
             title: 'Personal Website',
