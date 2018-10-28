@@ -1,7 +1,7 @@
 (function IIFE() {
     var wrapperDiv = document.getElementById('wrapper');
     function loadImages() {
-        let url = 'http://www.reddit.com/best/.json?limit=50';
+        let url = 'https://www.reddit.com/best/.json?limit=50';
         get(url, (x) => {
             let data = JSON.parse(x);
             let count = 0;
