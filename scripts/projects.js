@@ -14,39 +14,39 @@
             href: 'https://siddhant034.github.io/Projects/RedditTop10'
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         },
         {
-            title: 'Personal Website',
-            imgSrc: 'assets/personalWebsite.png',
-            href: 'file:///home/siddhant/siddhantshekhar/index.html'
+            title: 'Coming soon',
+            imgSrc: '',
+            href: ''
         }
     ];
     for (let i = 0; i < projects.length; i++) {
@@ -54,11 +54,18 @@
 
         // create outer div for project
         let projectDiv = document.createElement('div');
-        projectDiv.style.backgroundImage = 'url(' + project.imgSrc + ')';
+        if (project.imgSrc) {
+            projectDiv.style.backgroundImage = 'url(' + project.imgSrc + ')';
+        }
+        else {
+            projectDiv.style.backgroundColor = 'black';
+        }
         projectDiv.className = 'project-containers';
-        projectDiv.addEventListener('click', () => {
-            window.open(project.href);
-        });
+        if (project.href) {
+            projectDiv.addEventListener('click', () => {
+                window.open(project.href);
+            });
+        }
 
         // handle single project in a row
         if (projects.length % 2 == 0 && i == projects.length - 1 && media1.matches) {
