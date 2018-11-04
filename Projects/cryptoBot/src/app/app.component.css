@@ -1,0 +1,9 @@
+
+#outer-div{
+    height: 100%;
+}
+
+#inner-div{
+    height: 50%;
+    width:50%;
+}

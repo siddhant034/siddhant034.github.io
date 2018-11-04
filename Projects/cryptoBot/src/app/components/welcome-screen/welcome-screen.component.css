@@ -1,0 +1,40 @@
+.outer-div{
+    height: 100%;
+    width:100%;
+    background-image: url('/assets/bg.jpg');
+}
+.card-div{
+    width: 40%;
+    margin: 16px 0;
+}
+.welcome-text{
+    font-weight: bold;
+    font-size: 14px;
+    color:rgba(0,0,0,.87);
+}
+.inner-div{
+    height: 100%;
+    width:100%;
+}
+.input-field{
+    width:100%;
+}
+.input-inner{
+    height: 100%;
+    width: 100%;
+}
+.button{
+    background-color:#123456;
+}
+mat-form-field >>> .mat-form-field-underline{
+    display: none;
+}
+input{
+    padding:4px;
+}
+button{
+    background-color: #499105;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}

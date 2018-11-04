@@ -1,0 +1,16 @@
+<div class="outer-div" fxLayoutAlign="center center">
+  <mat-card class="card-div">
+    <div [formGroup]="fGroup1" class="inner-div" fxLayout="column" fxLayoutAlign="start center">
+      <p class="welcome-text">Welcome to Crypto Bot</p>
+      <p class="welcome-text">Please enter your Binance API key and Binance API secret to proceed</p>
+        <mat-form-field class="input-field" formControlName="apiKey">
+          <input #key matInput class="input-inner" placeholder="API key" name="apiKey" [(ngModel)]="apiKey">
+        </mat-form-field>
+        <mat-form-field class="input-field" formControlName="apiSecret">
+          <input #secret matInput class="input-inner" placeholder="API secret" type="'password'"  [(ngModel)]="apiSecret"
+            name="apiSecret">
+        </mat-form-field>
+      <button mat-raised-button color="primary" (click)="navigateToMarket(secret.value, key.value)">Proceed</button>
+    </div>
+  </mat-card>
+</div>

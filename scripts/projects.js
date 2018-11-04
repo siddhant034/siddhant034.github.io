@@ -14,8 +14,8 @@
             href: 'https://siddhant034.github.io/Projects/RedditTop10'
         },
         {
-            title: 'Coming soon',
-            imgSrc: '',
+            title: 'Crypto Bot (In development)',
+            imgSrc: 'assets/cryptoBot.png',
             href: ''
         },
         {
