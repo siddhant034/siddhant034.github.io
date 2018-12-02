@@ -16,35 +16,35 @@
         {
             title: 'Crypto Bot (In development)',
             imgSrc: 'assets/cryptoBot.png',
-            href: ''
+            href: 'https://github.com/siddhant034/fictional-octo-enigma'
         },
         {
-            title: 'Coming soon',
+            title: '',
             imgSrc: '',
             href: ''
         },
         {
-            title: 'Coming soon',
+            title: '',
             imgSrc: '',
             href: ''
         },
         {
-            title: 'Coming soon',
+            title: '',
             imgSrc: '',
             href: ''
         },
         {
-            title: 'Coming soon',
+            title: '',
             imgSrc: '',
             href: ''
         },
         {
-            title: 'Coming soon',
+            title: '',
             imgSrc: '',
             href: ''
         },
         {
-            title: 'Coming soon',
+            title: '',
             imgSrc: '',
             href: ''
         }
@@ -61,6 +61,9 @@
             projectDiv.style.backgroundColor = 'black';
         }
         projectDiv.className = 'project-containers';
+        if(project.title && project.title.length){
+            projectDiv.classList.add('pointer');
+        }
         if (project.href) {
             projectDiv.addEventListener('click', () => {
                 window.open(project.href);
@@ -80,6 +83,10 @@
         // create overlayDiv
         let overlayDiv = document.createElement('div');
         overlayDiv.className = 'overlay-div';
+        if(!project.title || project.title==''){
+            overlayDiv.classList.add('show'); 
+            project.title='Coming Soon';
+        }
 
         // create p element for title
         let title = document.createElement('p');

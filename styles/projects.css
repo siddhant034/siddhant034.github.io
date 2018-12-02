@@ -11,8 +11,11 @@
     border-radius: 4px;
     margin:2%;
     height:320px;
-    cursor: pointer;
     background-size: cover;
+}
+
+.pointer{
+    cursor: pointer;
 }
 
 .overlay-div{
@@ -30,6 +33,10 @@
 
 .overlay-div:hover{
     opacity: 0.9;
+}
+
+.show{
+    opacity: 0.9 !important;
 }
 
 @media only screen and (min-width: 1024px) {
