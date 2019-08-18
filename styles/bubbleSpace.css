@@ -36,3 +36,8 @@ z-index: 1;
     display: inline-block;    
 }
 
+.maintenance{
+    font-size:42px;
+    text-align:center;
+    padding:40px;
+}
