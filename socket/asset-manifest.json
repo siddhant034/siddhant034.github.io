@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Socket-Template/static/css/main.1945a1a3.chunk.css",
+    "main.js": "/Socket-Template/static/js/main.45aa638b.chunk.js",
+    "main.js.map": "/Socket-Template/static/js/main.45aa638b.chunk.js.map",
+    "runtime-main.js": "/Socket-Template/static/js/runtime-main.03c2e7ff.js",
+    "runtime-main.js.map": "/Socket-Template/static/js/runtime-main.03c2e7ff.js.map",
+    "static/js/2.164987ed.chunk.js": "/Socket-Template/static/js/2.164987ed.chunk.js",
+    "static/js/2.164987ed.chunk.js.map": "/Socket-Template/static/js/2.164987ed.chunk.js.map",
+    "index.html": "/Socket-Template/index.html",
+    "precache-manifest.d8fbca6de075ee0c051b82298d550810.js": "/Socket-Template/precache-manifest.d8fbca6de075ee0c051b82298d550810.js",
+    "service-worker.js": "/Socket-Template/service-worker.js",
+    "static/css/main.1945a1a3.chunk.css.map": "/Socket-Template/static/css/main.1945a1a3.chunk.css.map",
+    "static/js/2.164987ed.chunk.js.LICENSE.txt": "/Socket-Template/static/js/2.164987ed.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03c2e7ff.js",
+    "static/js/2.164987ed.chunk.js",
+    "static/css/main.1945a1a3.chunk.css",
+    "static/js/main.45aa638b.chunk.js"
+  ]
+}
