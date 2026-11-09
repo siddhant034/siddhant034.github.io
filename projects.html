@@ -1,24 +1,96 @@
-<!DOCTYPE HTML>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Siddhant Shekhar</title>
-    <link rel=stylesheet href="styles/reset.css">
-    <link rel=stylesheet href="styles/projects.css">
-    <script defer type="text/javascript" src="scripts/projects.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
-    <link rel="shortcut icon" type="image/png" href="assets/me.png"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Small tools and experiments by Siddhant Shekhar: focused utilities, useful browser tools, and thoughtful frontend engineering.">
+  <meta name="theme-color" content="#f6f7f8">
+  <title>Projects & Experiments — Siddhant Shekhar</title>
+  <link rel="icon" type="image/png" href="assets/me.png">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/projects-page.css">
 </head>
-
 <body>
-    <div id="home-icon-wrapper">
-        <a href="index.html">
-            <p>Back to Home</p>
-        </a>
-    </div>
-    <!--project preview container-->
-    <div id="wrapper">
-    </div>
-</body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Siddhant Shekhar home">SS<span>.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume <span aria-hidden="true">↗</span></a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
+    <main>
+      <section class="projects-hero" aria-labelledby="projects-title">
+        <p class="eyebrow">SMALL TOOLS · USEFUL EXPERIMENTS</p>
+        <h1 id="projects-title">Small scope.<br><span>Good engineering.</span></h1>
+        <p class="intro-copy">I’m exploring focused tools that solve one real problem well—from browser utilities to reusable frontend components. The goal is to ship useful things, not accumulate ambitious project plans.</p>
+      </section>
+
+      <section class="project-list" aria-label="Projects on the workbench">
+        <article class="project-card">
+          <div class="project-index">01 <span>CONCEPT</span></div>
+          <div class="project-content">
+            <p class="project-type">BROWSER API · RESILIENCE</p>
+            <h2>Network State</h2>
+            <p class="project-description">A tiny browser utility for apps that need to respond thoughtfully to connectivity changes, failed requests, and recovery—not just a green “online” indicator.</p>
+            <p class="project-proof"><strong>What I want to get right</strong> A small API, clean event lifecycle, predictable state transitions, and clear docs about what browser connectivity signals can and can’t tell you.</p>
+            <span class="project-status">Not built yet</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-index">02 <span>CONCEPT</span></div>
+          <div class="project-content">
+            <p class="project-type">DEVELOPER TOOL · BROWSER STORAGE</p>
+            <h2>Storage Inspector</h2>
+            <p class="project-description">A lightweight local tool to inspect, search, edit, and export localStorage and sessionStorage while debugging a web app.</p>
+            <p class="project-proof"><strong>What I want to get right</strong> Safe editing, readable values, quick filtering, and an interface that makes debugging less fiddly.</p>
+            <span class="project-status">Not built yet</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-index">03 <span>CONCEPT</span></div>
+          <div class="project-content">
+            <p class="project-type">SMALL WEB APP · TEXT PROCESSING</p>
+            <h2>Text Inspector</h2>
+            <p class="project-description">A privacy-first text utility for word and character counts, repeated phrases, whitespace issues, and quick comparisons—all processed in the browser.</p>
+            <p class="project-proof"><strong>What I want to get right</strong> Immediate feedback, useful details without clutter, and no account or upload needed.</p>
+            <span class="project-status">Not built yet</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-index">04 <span>CONCEPT</span></div>
+          <div class="project-content">
+            <p class="project-type">COMPONENT LIBRARY · ACCESSIBILITY</p>
+            <h2>Command Menu</h2>
+            <p class="project-description">A compact, keyboard-first command menu with search, groups, and sensible accessible defaults for product interfaces.</p>
+            <p class="project-proof"><strong>What I want to get right</strong> Keyboard interactions, focus management, screen-reader behavior, and an API that stays easy to use.</p>
+            <span class="project-status">Not built yet</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="projects-note">
+        <p class="section-label">A NOTE ON THIS PAGE</p>
+        <p>These are ideas on the workbench, not shipped projects. I’ll replace each concept with the real thing as it’s built—with source code, a demo or package, tests where appropriate, and a concise explanation of the decisions behind it.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year">2026</span> Siddhant Shekhar</span>
+      <div class="footer-links">
+        <a href="https://github.com/siddhant034" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/siddhant034" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
