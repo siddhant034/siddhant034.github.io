@@ -1,24 +1,85 @@
-<!DOCTYPE HTML>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Siddhant Shekhar</title>
-    <link rel=stylesheet href="styles/reset.css">
-    <link rel=stylesheet href="styles/projects.css">
-    <script defer type="text/javascript" src="scripts/projects.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
-    <link rel="shortcut icon" type="image/png" href="assets/me.png"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected projects by Siddhant Shekhar, exploring frontend engineering, AI-assisted quality, data-heavy interfaces, and real-time collaboration.">
+  <meta name="theme-color" content="#f6f7f8">
+  <title>Selected Work — Siddhant Shekhar</title>
+  <link rel="icon" type="image/png" href="assets/me.png">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/projects-page.css">
 </head>
-
 <body>
-    <div id="home-icon-wrapper">
-        <a href="index.html">
-            <p>Back to Home</p>
-        </a>
-    </div>
-    <!--project preview container-->
-    <div id="wrapper">
-    </div>
-</body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Siddhant Shekhar home">SS<span>.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume <span aria-hidden="true">↗</span></a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
+    <main>
+      <section class="projects-hero" aria-labelledby="projects-title">
+        <p class="eyebrow">SELECTED WORK · EXPERIMENTS</p>
+        <h1 id="projects-title">Building things<br><span>worth using.</span></h1>
+        <p class="intro-copy">A small collection of products exploring the problems I find interesting: trustworthy AI, complex interfaces, and software that works well under real-world constraints.</p>
+      </section>
+
+      <section class="project-list" aria-label="Featured projects">
+        <article class="project-card project-card-featured">
+          <div class="project-index">01 <span>FIRST BUILD</span></div>
+          <div class="project-content">
+            <p class="project-type">AI · DEVELOPER TOOLS · QUALITY</p>
+            <h2>UI Sentinel</h2>
+            <p class="project-description">An AI-assisted frontend quality gate that runs real user journeys, checks accessibility and visual regressions, and turns failures into evidence-backed, actionable reports.</p>
+            <p class="project-proof"><strong>What it will demonstrate</strong> Playwright automation, deterministic checks, AI-assisted diagnosis, and human-controlled remediation.</p>
+            <span class="project-status">Project concept</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-index">02 <span>PLANNED</span></div>
+          <div class="project-content">
+            <p class="project-type">DATA VISUALISATION · FRONTEND ARCHITECTURE</p>
+            <h2>Analytics workspace</h2>
+            <p class="project-description">A high-performance workspace for exploring large datasets through interactive charts, filters, drilldowns, and saved views.</p>
+            <p class="project-proof"><strong>What it will demonstrate</strong> Data-heavy UI architecture, rendering performance, state management, and thoughtful interaction design.</p>
+            <span class="project-status">Planned</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-index">03 <span>PLANNED</span></div>
+          <div class="project-content">
+            <p class="project-type">REAL-TIME · COLLABORATION · INTERACTION</p>
+            <h2>Collaborative workflow editor</h2>
+            <p class="project-description">A visual editor where people can build workflows together, see each other's presence, and keep working through imperfect network conditions.</p>
+            <p class="project-proof"><strong>What it will demonstrate</strong> Real-time state synchronisation, complex interactions, resilience, and extensible frontend architecture.</p>
+            <span class="project-status">Planned</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="projects-note">
+        <p class="section-label">A NOTE ON THIS PAGE</p>
+        <p>These projects will be added as they become real, usable products. Each one will include a live demo, source code, and a short case study covering the problem, architecture, trade-offs, and what I learned.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year">2026</span> Siddhant Shekhar</span>
+      <div class="footer-links">
+        <a href="https://github.com/siddhant034" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/siddhant034" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
