@@ -83,3 +83,20 @@
   .project-index span { display: inline; margin: 0 0 0 8px; }
   .projects-note { padding-bottom: 56px; }
 }
+
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 20px;
+}
+.project-links a {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+}
+.project-links a:hover { opacity: .72; }
