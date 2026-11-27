@@ -29,7 +29,8 @@ jobs:
         working-directory: storage-inspector
         run: npm install
       - name: Install Chromium
-        run: npx --prefix storage-inspector playwright install --with-deps chromium
+        working-directory: storage-inspector
+        run: npx playwright install --with-deps chromium
       - name: Run browser tests
         working-directory: storage-inspector
         run: npm test
