@@ -1,0 +1,43 @@
+name: Storage Inspector browser checks
+
+on:
+  push:
+    paths:
+      - 'storage-inspector/**'
+      - '.github/workflows/storage-inspector.yml'
+  pull_request:
+    paths:
+      - 'storage-inspector/**'
+      - '.github/workflows/storage-inspector.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: storage-inspector/package.json
+      - name: Install test runner
+        working-directory: storage-inspector
+        run: npm install
+      - name: Install Chromium
+        run: npx --prefix storage-inspector playwright install --with-deps chromium
+      - name: Run browser tests
+        working-directory: storage-inspector
+        run: npm test
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storage-inspector-playwright-report
+          path: storage-inspector/playwright-report/
+          if-no-files-found: ignore
+          retention-days: 7
