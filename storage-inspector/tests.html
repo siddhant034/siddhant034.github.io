@@ -9,7 +9,7 @@
  const test=(name,ok,detail='')=>{results.push(!!ok);const li=document.createElement('li');li.className=ok?'pass':'fail';li.textContent=(ok?'PASS — ':'FAIL — ')+name+(detail?' ('+detail+')':'');out.append(li)};
  await new Promise((resolve,reject)=>{frame.addEventListener('load',resolve,{once:true});frame.addEventListener('error',reject,{once:true})});
  const w=frame.contentWindow,d=frame.contentDocument,s=w.localStorage;
- const keys=['__si_test_a','__si_test_b','__si_imported'];const clean=()=>{keys.forEach(k=>s.removeItem(k));w.sessionStorage.removeItem('__si_session')};
+ const keys=['__si_test_a','__si_test_b','__si_imported','__si_added'];const clean=()=>{keys.forEach(k=>s.removeItem(k));w.sessionStorage.removeItem('__si_session')};
  try{
  clean();s.setItem(keys[0],'needle value');s.setItem(keys[1],'other');
  d.querySelector('#search').value='needle';d.querySelector('#search').dispatchEvent(new w.Event('input',{bubbles:true}));
@@ -22,6 +22,12 @@
  await new Promise(resolve=>setTimeout(resolve,50));
  test('JSON import merges and serializes structured values',s.getItem(keys[2])==='{"enabled":true}');
  d.querySelector('#exportBtn').click();test('JSON export action reports success',d.querySelector('#ioStatus').textContent.includes('export'));
+ d.querySelector('#resetBtn').click();d.querySelector('#key').value='__si_added';d.querySelector('#value').value='created';d.querySelector('#editor').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));
+ test('add creates a new entry',s.getItem('__si_added')==='created');
+ const badFile=new w.File(['[]'],'invalid.json',{type:'application/json'}),badTransfer=new w.DataTransfer();badTransfer.items.add(badFile);d.querySelector('#file').files=badTransfer.files;d.querySelector('#file').dispatchEvent(new w.Event('change',{bubbles:true}));
+ await new Promise(resolve=>setTimeout(resolve,25));test('invalid JSON shape is rejected',d.querySelector('#ioStatus').textContent.includes('object'));
+ d.querySelector('#clearBtn').click();d.querySelector('#cancelClear').click();test('cancel preserves storage',s.getItem('__si_added')==='created'&&!d.querySelector('#confirmModal').hasAttribute('open'));
+ d.querySelector('#clearBtn').click();d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));test('Escape dismisses clear dialog',!d.querySelector('#confirmModal').hasAttribute('open'));
  d.querySelector('#sessionTab').click();w.sessionStorage.setItem('__si_session','session value');d.querySelector('#search').value='__si_session';d.querySelector('#search').dispatchEvent(new w.Event('input',{bubbles:true}));
  test('sessionStorage switches independently',d.querySelectorAll('.entry').length===1&&w.sessionStorage.getItem('__si_session')==='session value');
  d.querySelector('#clearBtn').click();test('clear opens confirmation',d.querySelector('#confirmModal').hasAttribute('open'));
