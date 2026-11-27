@@ -10,11 +10,21 @@ Browser security restricts web pages to storage belonging to their own origin. T
 
 Open `index.html` in a modern browser (some browsers restrict storage on `file:` URLs; serve this directory over localhost if needed). No dependencies or network requests are required by the app.
 
-## Browser smoke tests
+## Automated browser tests
 
-Open [tests.html](tests.html) from the same origin as `index.html`. The test harness uses a same-origin iframe and disposable keys to verify search, edit, delete, JSON import/export action, switching storage areas, and clear confirmation/clearing. It reports a pass/fail summary and cleans up its test data.
+Run the Playwright end-to-end suite locally:
 
-The suite exercises real browser Web Storage and requires a modern browser. It does not send test data anywhere.
+```sh
+npm install
+npx playwright install chromium
+npm test
+```
+
+The suite runs Chromium against a local static server and covers add/search/edit/delete, independent storage areas, JSON import validation, export download, clear confirmation/cancel/Escape, and accessible labels/keyboard activation. Test keys use a dedicated prefix and are removed after each test. The GitHub Actions workflow runs these checks on changes to this folder and uploads an HTML report on completion.
+
+## Manual browser smoke tests
+
+Open [tests.html](tests.html) from the same origin as `index.html` for a dependency-free smoke check. It runs in a same-origin iframe and cleans up its temporary keys.
 
 ## Browser limits
 
