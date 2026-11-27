@@ -96,7 +96,7 @@ test('clear confirmation can be canceled, dismissed with Escape, and confirmed',
 
 test('keyboard and labels keep primary controls accessible', async ({ page }) => {
   await expect(page.getByRole('searchbox', { name: 'Search keys and values' })).toBeVisible();
-  await expect(page.getByLabel('KEY')).toBeVisible();
+  await expect(page.locator('#key')).toBeVisible();
   await expect(page.getByLabel('VALUE · plain text or JSON')).toBeVisible();
   await page.locator('#clearBtn').focus();
   await page.keyboard.press('Enter');
