@@ -13,6 +13,7 @@ After GitHub Pages publishes this folder: https://siddhant034.github.io/command-
 - Grouped command results
 - Arrow Up/Down, Home/End, Enter, and Escape
 - Focus moves to search on open and returns to the previous element on close
+- Tab and Shift+Tab stay within the open dialog
 - Empty search state, selected-option announcement, focus-visible styles
 - Click outside to dismiss
 
