@@ -22,6 +22,7 @@ function openMenu() {
   if (!overlay.hidden) return;
   previousFocus = document.activeElement;
   overlay.hidden = false;
+  search.setAttribute("aria-expanded", "true");
   search.value = "";
   activeIndex = 0;
   renderCommands();
@@ -30,6 +31,7 @@ function openMenu() {
 function closeMenu() {
   if (overlay.hidden) return;
   overlay.hidden = true;
+  search.setAttribute("aria-expanded", "false");
   if (previousFocus instanceof HTMLElement) previousFocus.focus();
 }
 function filtered() {
