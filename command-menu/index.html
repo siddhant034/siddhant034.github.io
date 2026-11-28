@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A keyboard-first command menu demo with accessible search, grouped actions, and focus management.">
+  <title>Command Menu — Siddhant Shekhar</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./command-menu.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a href="../projects.html">← Projects</a><span>UI COMPONENT · DEMO</span></header>
+    <section class="hero">
+      <p class="eyebrow">ACCESSIBLE INTERACTION PATTERN</p>
+      <h1>Move through<br><em>your work</em> faster.</h1>
+      <p class="lede">A small, keyboard-first command menu with searchable groups, predictable focus, and no dependencies.</p>
+      <button class="primary" id="open-menu" type="button">Open command menu <kbd>⌘ K</kbd></button>
+      <p class="hint">Try <kbd>Ctrl K</kbd> / <kbd>⌘ K</kbd>, then type “theme” or use ↑ ↓ and Enter.</p>
+    </section>
+    <section class="demo-panel" aria-labelledby="demo-title">
+      <div><p class="eyebrow">LIVE PREVIEW</p><h2 id="demo-title">A tiny workspace</h2></div>
+      <div class="preview-card" id="preview-card">
+        <span class="preview-icon" aria-hidden="true">✳</span>
+        <div><strong id="preview-heading">Ready when you are</strong><p id="preview-message">Open the menu to run an action.</p></div>
+      </div>
+      <p class="status" id="action-status" role="status" aria-live="polite">No command selected yet.</p>
+    </section>
+    <footer><a href="https://github.com/siddhant034/siddhant034.github.io/tree/master/command-menu">View source ↗</a><span>Built with HTML, CSS & JavaScript</span></footer>
+  </main>
+
+  <div class="overlay" id="menu-overlay" hidden>
+    <section class="command-dialog" role="dialog" aria-modal="true" aria-labelledby="menu-title" aria-describedby="menu-help">
+      <h2 class="sr-only" id="menu-title">Command menu</h2>
+      <label class="sr-only" for="command-search">Search commands</label>
+      <div class="search-row"><span aria-hidden="true">⌕</span><input id="command-search" type="search" autocomplete="off" placeholder="Search commands…" aria-controls="command-list" aria-expanded="true"><kbd>ESC</kbd></div>
+      <p class="sr-only" id="menu-help">Use the up and down arrow keys to move, Enter to run a command, and Escape to close.</p>
+      <div class="command-list" id="command-list" role="listbox" aria-label="Commands"></div>
+      <div class="dialog-foot"><span>↑ ↓ Navigate <b>↵</b> Run</span><span>ESC Close</span></div>
+    </section>
+  </div>
+</body>
+</html>
