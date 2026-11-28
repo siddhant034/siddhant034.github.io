@@ -110,6 +110,18 @@ search.addEventListener("keydown", event => {
   if (event.key === "End" && visibleCommands.length) { event.preventDefault(); activeIndex = visibleCommands.length - 1; renderCommands(); }
 });
 document.addEventListener("keydown", event => {
+  if (!overlay.hidden && event.key === "Tab") {
+    const dialog = overlay.querySelector('[role="dialog"]');
+    const focusable = [...dialog.querySelectorAll('button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')];
+    if (!focusable.length) { event.preventDefault(); dialog.focus(); return; }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+      event.preventDefault(); last.focus();
+    } else if (!event.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+      event.preventDefault(); first.focus();
+    }
+  }
   if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
     event.preventDefault();
     openMenu();
