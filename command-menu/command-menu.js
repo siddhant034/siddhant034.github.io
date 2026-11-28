@@ -50,42 +50,47 @@ function renderCommands() {
     list.append(empty);
     return;
   }
-  let lastGroup = "";
+  const groups = new Map();
   visibleCommands.forEach((command, index) => {
-    if (command.group !== lastGroup) {
-      const label = document.createElement("div");
-      label.className = "group-label";
-      label.textContent = command.group;
-      label.id = "command-group-" + index;
-      list.append(label);
-      lastGroup = command.group;
-    }
-    const option = document.createElement("button");
-    option.type = "button";
-    option.className = "command-option";
-    option.id = "command-option-" + index;
-    option.role = "option";
-    option.tabIndex = -1;
-    option.setAttribute("aria-selected", String(index === activeIndex));
-    option.setAttribute("aria-labelledby", "command-title-" + index);
-    option.setAttribute("aria-describedby", "command-detail-" + index);
-    const glyph = document.createElement("span");
-    glyph.className = "glyph";
-    glyph.setAttribute("aria-hidden", "true");
-    glyph.textContent = command.icon;
-    const copy = document.createElement("span");
-    copy.className = "copy";
-    const title = document.createElement("strong");
-    title.id = "command-title-" + index;
-    title.textContent = command.title;
-    const detail = document.createElement("small");
-    detail.id = "command-detail-" + index;
-    detail.textContent = command.detail;
-    copy.append(title, detail);
-    option.append(glyph, copy);
-    option.addEventListener("click", () => runCommand(index));
-    list.append(option);
+    if (!groups.has(command.group)) groups.set(command.group, []);
+    groups.get(command.group).push({ command, index });
   });
+  for (const [groupName, entries] of groups) {
+    const group = document.createElement("div");
+    group.setAttribute("role", "group");
+    const label = document.createElement("div");
+    label.className = "group-label";
+    label.id = "command-group-" + entries[0].index;
+    label.textContent = groupName;
+    group.setAttribute("aria-labelledby", label.id);
+    group.append(label);
+    for (const { command, index } of entries) {
+      const option = document.createElement("div");
+      option.className = "command-option";
+      option.id = "command-option-" + index;
+      option.setAttribute("role", "option");
+      option.setAttribute("aria-selected", String(index === activeIndex));
+      option.setAttribute("aria-labelledby", "command-title-" + index);
+      option.setAttribute("aria-describedby", "command-detail-" + index);
+      const glyph = document.createElement("span");
+      glyph.className = "glyph";
+      glyph.setAttribute("aria-hidden", "true");
+      glyph.textContent = command.icon;
+      const copy = document.createElement("span");
+      copy.className = "copy";
+      const title = document.createElement("strong");
+      title.id = "command-title-" + index;
+      title.textContent = command.title;
+      const detail = document.createElement("small");
+      detail.id = "command-detail-" + index;
+      detail.textContent = command.detail;
+      copy.append(title, detail);
+      option.append(glyph, copy);
+      option.addEventListener("click", () => runCommand(index));
+      group.append(option);
+    }
+    list.append(group);
+  }
   search.setAttribute("aria-activedescendant", "command-option-" + activeIndex);
   list.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: "nearest" });
 }
@@ -114,7 +119,7 @@ search.addEventListener("keydown", event => {
 document.addEventListener("keydown", event => {
   if (!overlay.hidden && event.key === "Tab") {
     const dialog = overlay.querySelector('[role="dialog"]');
-    const focusable = [...dialog.querySelectorAll('button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')];
+    const focusable = [...dialog.querySelectorAll('button:not([disabled]):not([tabindex="-1"]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')];
     if (!focusable.length) { event.preventDefault(); dialog.focus(); return; }
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
