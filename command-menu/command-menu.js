@@ -41,6 +41,7 @@ function renderCommands() {
   activeIndex = Math.min(activeIndex, Math.max(0, visibleCommands.length - 1));
   list.replaceChildren();
   if (!visibleCommands.length) {
+    search.removeAttribute("aria-activedescendant");
     const empty = document.createElement("p");
     empty.className = "empty";
     empty.textContent = "No matching commands";
@@ -62,6 +63,7 @@ function renderCommands() {
     option.className = "command-option";
     option.id = "command-option-" + index;
     option.role = "option";
+    option.tabIndex = -1;
     option.setAttribute("aria-selected", String(index === activeIndex));
     option.setAttribute("aria-labelledby", "command-title-" + index);
     option.setAttribute("aria-describedby", "command-detail-" + index);
@@ -82,6 +84,7 @@ function renderCommands() {
     option.addEventListener("click", () => runCommand(index));
     list.append(option);
   });
+  search.setAttribute("aria-activedescendant", "command-option-" + activeIndex);
   list.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: "nearest" });
 }
 function moveSelection(delta) {
